@@ -1,5 +1,14 @@
 import React from "react";
-import { Form, Col, Button, Container, InputGroup, Row } from "react-bootstrap";
+import {
+  Form,
+  Col,
+  Button,
+  Container,
+  InputGroup,
+  Row,
+  ToggleButtonGroup,
+  ToggleButton,
+} from "react-bootstrap";
 import {
   FaUser,
   FaEnvelope,
@@ -27,7 +36,7 @@ export default function LogIn() {
                     <FaUser />
                   </InputGroup.Text>
                 </InputGroup.Prepend>
-                <Form.Control type="text" placeholder="Enter email" />
+                <Form.Control type="text" placeholder="Enter Username" />
               </InputGroup>
             </Form.Group>
           </Col>
@@ -56,7 +65,11 @@ export default function LogIn() {
                   <FaBuilding />
                 </InputGroup.Text>
               </InputGroup.Prepend>
-              <Form.Control placeholder="Street, Number, City, Zip" />
+              <Form.Control
+                as="textarea"
+                rows={2}
+                placeholder="Street, Number, City, Zip"
+              />
             </InputGroup>
           </Form.Group>
         </Col>
@@ -81,6 +94,33 @@ export default function LogIn() {
                 </Form.Control>
               </InputGroup>
             </Form.Group>
+          </Col>
+
+          <Col>
+            <p className="formLabel">Gender</p>
+            <ToggleButtonGroup type="radio" name="options">
+              <ToggleButton
+                variant="outline-success"
+                id="tbg-female"
+                value="Female"
+              >
+                Female
+              </ToggleButton>
+              <ToggleButton
+                variant="outline-success"
+                id="tbg-male"
+                value="Male"
+              >
+                Male
+              </ToggleButton>
+              <ToggleButton
+                variant="outline-success"
+                id="tbg-other"
+                value="Other"
+              >
+                Other
+              </ToggleButton>
+            </ToggleButtonGroup>
           </Col>
         </Row>
 
