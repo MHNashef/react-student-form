@@ -1,9 +1,10 @@
 import LogIn from "./LogIn"
+import StudentPage from "./StudentPage";
 import './App.css';
 
 function App() {
   return (
-    <LogIn />
+    <StudentPage />
   );
 }
 
