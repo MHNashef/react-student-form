@@ -18,8 +18,8 @@ import {
   FaGraduationCap,
 } from "react-icons/fa";
 import ErrorMsgs from "./ErrorMsgs";
-import addStudent from "./DAL/api";
-import "./LogIn.css";
+import addStudent from "../DAL/api";
+import "../LogIn.css";
 
 export default function LogIn() {
   const [completeForm, setCompleteForm] = useState("");

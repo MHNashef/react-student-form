@@ -2,22 +2,25 @@ import React, { useState } from "react";
 import AddStudentModal from "./AddStudentModal";
 import Card from "./Card";
 import LogIn from "./LogIn";
-import { getStudents } from "./DAL/api";
+import { getStudents } from "../DAL/api";
 import { Container, Table, Button, Row, Col } from "react-bootstrap";
 
 export default function StudentPage() {
   const students = getStudents();
+  // const [students, setStudents] = useState(getStudents());
   const [show, setShow] = useState(false);
   const [card, setCard] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+
   return (
     <Container className="mt-5">
       <Table striped bordered hover variant="dark">
         <thead>
           <tr>
+            <th>ID</th>
             <th>User Name</th>
             <th>Email</th>
             <th>Address</th>
@@ -28,7 +31,10 @@ export default function StudentPage() {
         <tbody>
           {students.map((studentObj, idx) => {
             return (
-              <tr key={idx} onClick={() => setCard({show: !card.show, id: studentObj.id})}>
+              <tr
+                key={idx}
+                onClick={() => setCard({ show: !card.show, id: studentObj.id })}
+              >
                 {Object.keys(studentObj).map((key, idx) => (
                   <td key={idx}>{studentObj[key]}</td>
                 ))}
@@ -41,9 +47,9 @@ export default function StudentPage() {
         Add Student &#43;
       </Button>
       <Button variant="primary">Sort By Name</Button>
-      {
-          card.show && <Card id={card.id} students={students} />
-      }
+      {/* {
+          card.show && <Card id={card.id} students={students} card={card} />
+      } */}
       <AddStudentModal show={show} handleClose={handleClose} />
     </Container>
   );

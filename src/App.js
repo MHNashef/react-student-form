@@ -1,6 +1,6 @@
-import LogIn from "./LogIn";
+import LogIn from "./components/LogIn";
 import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-import StudentPage from "./StudentPage";
+import StudentPage from "./components/StudentPage";
 import "./App.css";
 
 function App() {
