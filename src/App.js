@@ -1,11 +1,10 @@
-import LogIn from "./LogIn"
+import LogIn from "./LogIn";
+import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
 import StudentPage from "./StudentPage";
-import './App.css';
+import "./App.css";
 
 function App() {
-  return (
-    <StudentPage />
-  );
+  return <StudentPage />;
 }
 
 export default App;

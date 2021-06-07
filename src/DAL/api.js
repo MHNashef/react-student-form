@@ -2,15 +2,15 @@ const students = [
   {
     username: "Hisham",
     email: "hisham@gmail.com",
-    address: "17551 Wayne Ave",
+    address: "Somewhere in Israel",
     course: "JavaScript",
     gender: "Male",
   },
 
   {
-    username: "Yakov Kassa",
+    username: "Yakov",
     email: "yakov@gmail.com",
-    address: "Netanya, Israel",
+    address: "Somewhere in Israel",
     course: "MySQL",
     gender: "Male",
   },
@@ -45,7 +45,7 @@ function addStudent(loginData) {
     studentData[input] = loginData[input].value;
   }
 
-  students.push({ ...studentData });
+  students.push({ ...studentData, id: students.length });
   console.log(students);
 }
 
