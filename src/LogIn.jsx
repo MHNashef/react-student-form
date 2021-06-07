@@ -98,7 +98,6 @@ export default function LogIn() {
     let isValid = true;
 
     for (const input in loginData) {
-      console.log(loginData[input]);
       if (!loginData[input].value || loginData[input].errors.length > 0) {
         isValid = false;
       }
