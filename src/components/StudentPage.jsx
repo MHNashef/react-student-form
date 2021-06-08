@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import AddStudentModal from "./AddStudentModal";
 import Card from "./Card";
-import LogIn from "./LogIn";
 import { getStudents } from "../DAL/api";
 import { Container, Table, Button, Row, Col } from "react-bootstrap";
 
@@ -19,14 +18,16 @@ export default function StudentPage() {
   function sort() {
     if (!isSorted) {
       students.sort((a, b) => {
-          return (a.username < b.username) ? -1 : 1});
+        return a.username < b.username ? -1 : 1;
+      });
 
       setStudents([...students]);
       setSortButton("Unsort");
       setIsSorted(true);
     } else {
       students.sort((a, b) => {
-        return (a.id < b.id) ? -1 : 1});
+        return a.id < b.id ? -1 : 1;
+      });
       setStudents([...students]);
       setSortButton("Sort By Name");
       setIsSorted(false);

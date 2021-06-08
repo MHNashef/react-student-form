@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import {
   Form,
   Col,
@@ -22,6 +23,7 @@ import addStudent from "../DAL/api";
 import "../LogIn.css";
 
 export default function LogIn() {
+  const history = useHistory();
   const [completeForm, setCompleteForm] = useState("");
   const [loginData, setLoginData] = useState({
     username: {
@@ -108,6 +110,7 @@ export default function LogIn() {
     } else {
       setCompleteForm("");
       addStudent(loginData);
+      history.push("/student-page");
     }
   }
 
