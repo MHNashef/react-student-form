@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import LogIn from "./LogIn";
-import { Button, Modal } from "react-bootstrap";
+import { Modal } from "react-bootstrap";
 
 export default function AddStudentModal({ show, handleClose }) {
   return (
