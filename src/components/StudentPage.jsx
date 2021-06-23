@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AddStudentModal from "./AddStudentModal";
-import Card from "./Card";
+import CardDisplay from "./CardDisplay";
 import { getStudents } from "../DAL/api";
 import { Container, Table, Button, Row, Col } from "react-bootstrap";
 
@@ -68,9 +68,9 @@ export default function StudentPage() {
       <Button variant="primary" onClick={sort}>
         {sortButton}
       </Button>
-      {/* {
-          card.show && <Card id={card.id} students={students} card={card} />
-      } */}
+      {
+          card.show && <CardDisplay id={card.id} students={students} card={card} />
+      }
       <AddStudentModal show={show} handleClose={handleClose} />
     </Container>
   );
