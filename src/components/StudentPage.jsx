@@ -68,7 +68,7 @@ export default function StudentPage() {
         {sortButton}
       </Button>
       {
-          card.show && <CardDisplay id={card.id} students={students} card={card} />
+          card.show && <CardDisplay id={card.id} students={students}/>
       }
       <AddStudentModal show={show} handleClose={handleClose} />
     </Container>
